@@ -1,4 +1,90 @@
-.weather-box{
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap');
+body {
+    background-color: #6ee8f8; /* Light gray background */
+    margin: 0;
+    padding: 0;
+    font-family: 'Outfit', sans-serif;
+  }
+.weather-container{
     max-width: 400px;
-    
+    margin:60px auto;
+    padding:30px;
+    background:#31255a;
+    border-radius:12px;
+    text-align:center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    font-family : Outfit , sans-serif;
+    color:#8fe0ff;
 }
+.weather-container::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background-color: #fce4ec;/* White background behind the weather box */
+    border-radius: 16px;
+    z-index: -1; /* Places it behind the weather box */
+  }
+.input-group{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-bottom:20px;
+}
+input{
+    padding:10px;
+    border:none;
+    border-radius:6px;
+    flex:1;
+    background-color: #54416d;
+    color:#ffffff;
+    outline:none;
+}
+input::placeholder{
+    color: #d9d9d9;
+}
+button{
+    padding: 10px 16px;
+    background-color: #75b4e3;
+    color:#2b235a;
+    font-weight:bold;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    transition: background-color 0.3s ease;
+}
+button:hover{
+    background-color: #8fe0ff;
+}
+.weather-result{
+    margin-top:20px;
+    background-color: #2b235a;
+    padding: 20px;
+    border-radius: 8px;
+    color:#ffffff;
+}
+.loading-spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .spinner {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #2196f3;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 10px;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
